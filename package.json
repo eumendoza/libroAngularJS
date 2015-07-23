@@ -2,7 +2,15 @@
   "name": "libroangularjs",
   "version": "1.0.0",
   "description": "Tutorial sobre Angular JS",
-  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/eumendoza/libroAngularJS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eumendoza/libroAngularJS.git"
+  },
+  "author": "Eugenio Mendoza",
+  "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
@@ -16,18 +24,5 @@
     "gulp-uglify": "^1.2.0",
     "nib": "^1.1.0",
     "gulp-useref": "^1.2.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eumendoza/libroAngularJS.git"
-  },
-  "author": "Eugenio Mendoza",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/eumendoza/libroAngularJS/issues"
-  },
-  "homepage": "https://github.com/eumendoza/libroAngularJS#readme"
+  }
 }
