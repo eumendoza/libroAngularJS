@@ -1,11 +1,11 @@
 'use strict';
 
 var gulp = require('gulp'),
-    connect = require('gulp-connect'),
-    stylus = require('gulp-stylus'),
-    nib = require('nib'),
-    jshint = require('gulp-jshint'),
-    stylish = require('jshint-stylish');
+  connect = require('gulp-connect'),
+  stylus = require('gulp-stylus'),
+  nib = require('nib'),
+  jshint = require('gulp-jshint'),
+  stylish = require('jshint-stylish');
 
 gulp.task('server', function() {
   connect.server({
@@ -16,23 +16,25 @@ gulp.task('server', function() {
   });
 });
 
-gulp.task('jshint', function(){
-  return gulp.src('./app/scripts/**/*.js')
-  .pipe(jshint('.jshintrc'))
-  .pipe(jshint.reporter('jshint-stylish'))
-  .pipe(jshint.reporter('fail'));
+gulp.task('jshint', function() {
+  gulp.src('./app/scripts/**/*.js')
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('css', function() {
   gulp.src('./app/stylesheets/main.styl')
-  .pipe(stylus({ use: nib() }))
-  .pipe(gulp.dest('./app/stylesheets'))
-  .pipe(connect.reload());
+    .pipe(stylus({
+      use: nib()
+    }))
+    .pipe(gulp.dest('./app/stylesheets'))
+    .pipe(connect.reload());
 });
 
 gulp.task('html', function() {
   gulp.src('./app/**/*.html')
-  .pipe(connect.reload());
+    .pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
