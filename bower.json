@@ -1,6 +1,9 @@
 {
-'name': 'angularapp-gulp-boilerplate',
-'version': '0.0.1',
-'description': 'Ejemplo de desarrollo de aplicación web con JavaScript',
-'dependencies': {}
+  "name": "angularapp-gulp-boilerplate",
+  "version": "0.0.1",
+  "description": "Ejemplo de desarrollo de aplicación web con JavaScript",
+  "dependencies": {
+    "angular": "~1.4.3",
+    "bootstrap": "~3.3.5"
+  }
 }

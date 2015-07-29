@@ -6,7 +6,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylesheets/main.css">
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+        <!-- endinject -->
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -15,6 +20,15 @@
 
         <!-- Add your site or application content here -->
         <p>Hello world! This is HTML5 Boilerplate.</p>
+
+        <!-- bower:js -->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+        <!-- inject:js -->
+        <script src="/scripts/main.js"></script>
+        <!-- endinject -->
 
     </body>
 </html>

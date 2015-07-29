@@ -5,7 +5,9 @@ var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
   nib = require('nib'),
   jshint = require('gulp-jshint'),
-  stylish = require('jshint-stylish');
+  stylish = require('jshint-stylish'),
+  inject = require('gulp-inject'),
+  wiredep = require('wiredep').stream;
 
 gulp.task('server', function() {
   connect.server({
@@ -37,10 +39,33 @@ gulp.task('html', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('inject', function() {
+  var sources = gulp.src(['./app/scripts/**/*.js',
+    './app/stylesheets/**/*.css'
+  ]);
+  return gulp.src('index.html', {
+      cwd: './app'
+    })
+    .pipe(inject(sources, {
+      read: false,
+      ignorePath: '/app'
+    }))
+    .pipe(gulp.dest('./app'));
+});
+
+gulp.task('wiredep', function() {
+  gulp.src('./app/index.html')
+    .pipe(wiredep({
+      directory: './app/lib'
+    }))
+    .pipe(gulp.dest('./app'));
+});
+
 gulp.task('watch', function() {
   gulp.watch(['./app/**/*.html'], ['html']);
-  gulp.watch(['./app/stylesheets/**/*.styl'], ['css']);
-  gulp.watch(['./app/**/*.js'], ['jshint']);
+  gulp.watch(['./app/stylesheets/**/*.styl'], ['css', 'inject']);
+  gulp.watch(['./app/**/*.js', './gulpfile.js'], ['jshint', 'inject']);
+  gulp.watch(['./bower.json'], ['wiredep']);
 });
 
 gulp.task('default', ['server', 'watch']);
