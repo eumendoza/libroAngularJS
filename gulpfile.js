@@ -68,4 +68,4 @@ gulp.task('watch', function() {
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['server', 'inject', 'wiredep', 'watch']);
