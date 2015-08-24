@@ -1,33 +1,39 @@
 <!doctype html>
 <html lang="es-ES">
     <head>
+        <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
         <!-- bower:css -->
         <!-- endbower -->
         <!-- inject:css -->
         <link rel="stylesheet" href="/stylesheets/main.css">
-        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
         <!-- endinject -->
     </head>
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <body ng-app="blog">
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="container-fluid">
+            <div class="row">
+                <aside class="col-sm-3">
+                    <a ng-href="/new">Crear entrada</a>
+                </aside>
+                <section class="col-sm-9" ng-view></section>
+            </div>
+        </div>
 
         <!-- bower:js -->
         <script src="lib/angular/angular.js"></script>
         <script src="lib/jquery/dist/jquery.js"></script>
         <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="lib/angular-route/angular-route.js"></script>
+        <script src="lib/angular-resource/angular-resource.js"></script>
         <!-- endbower -->
         <!-- inject:js -->
-        <script src="/scripts/main.js"></script>
+        <script src="/scripts/app.js"></script>
         <!-- endinject -->
 
     </body>
