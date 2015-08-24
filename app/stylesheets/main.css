@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Raleway-Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway-Light'), url("//themes.googleusercontent.com/static/");
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url("//themes.googleusercontent.com/static/fonts/raleway/v7/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4");
+}
+body .blog-post-list {
+  list-style-type: none;
+}
+body .blog-post-list .blog-post-link {
+  margin: 0.5em 0 1em 0;
+  padding: 0 0 0.25em 0;
+  border-bottom: 1px solid #000;
+}
