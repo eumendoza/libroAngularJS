@@ -15,7 +15,7 @@
 				controllerAs:'postList'
 			})
 			.when('/post/:postId', {
-				templateUrl:'views/post-list-detail.tpl.html',
+				templateUrl:'views/post-detail.tpl.html',
 				controller:'PostDetailController',
 				controllerAs:'postDetail'
 			})
